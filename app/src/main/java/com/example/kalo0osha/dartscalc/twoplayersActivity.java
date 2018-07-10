@@ -85,45 +85,46 @@ public class twoplayersActivity extends AppCompatActivity {
         player1_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int temp = Integer.parseInt(pinput1.getText().toString());
-                if (score1 - temp >= 0) {
-                    l1.add(pinput1.getText().toString());
-                    // adapter3.add(pinput1.getText().toString());
-                    ls1.setAdapter(adapter3);
-                    // adapter3.notifyDataSetChanged();
+                if (pinput1.getText().length() != 0) {
+                    int temp = Integer.parseInt(pinput1.getText().toString());
+                    if (score1 - temp >= 0) {
+                        l1.add(pinput1.getText().toString());
+                        // adapter3.add(pinput1.getText().toString());
+                        ls1.setAdapter(adapter3);
+                        // adapter3.notifyDataSetChanged();
 
 
-                    try {
+                        try {
 
-                        score1 = score1 - temp;
+                            score1 = score1 - temp;
 //                        pscoore1.setText(String.valueOf(scoore1));
 //                        mCustomProgressBar1.setProgress(scoore1);
-                        simulateProgress(score1, scoreProgressBar1);
+                            simulateProgress(score1, scoreProgressBar1);
 
+                            pinput1.setText(null);
+                            getwiner();
+
+                        } catch (Exception e) {
+                            Log.i(this.getClass().getSimpleName(), e.getMessage());
+                        }
+                    } else {
+                        AlertDialog.Builder dlgAlert = new AlertDialog.Builder(twoplayersActivity.this);
+                        dlgAlert.setMessage(" Out of range");
+                        dlgAlert.setTitle("opps");
+                        dlgAlert.setPositiveButton("OK", null);
+                        dlgAlert.setCancelable(true);
+                        dlgAlert.create().show();
+                        dlgAlert.setPositiveButton("Ok",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //
+                                    }
+                                });
                         pinput1.setText(null);
-                        getwiner();
 
-                    } catch (Exception e) {
-                        Log.i(this.getClass().getSimpleName(), e.getMessage());
+
                     }
-                } else {
-                    AlertDialog.Builder dlgAlert = new AlertDialog.Builder(twoplayersActivity.this);
-                    dlgAlert.setMessage(" Out of range");
-                    dlgAlert.setTitle("opps");
-                    dlgAlert.setPositiveButton("OK", null);
-                    dlgAlert.setCancelable(true);
-                    dlgAlert.create().show();
-                    dlgAlert.setPositiveButton("Ok",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //
-                                }
-                            });
-                    pinput1.setText(null);
-
-
                 }
-
             }
         });
         pinput1.setOnKeyListener(new View.OnKeyListener() {
@@ -132,42 +133,45 @@ public class twoplayersActivity extends AppCompatActivity {
                     switch (keyCode) {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
-                            int temp = Integer.parseInt(pinput1.getText().toString());
+                            if (pinput1.getText().length() != 0) {
 
-                            if (score1 - temp >= 0) {
-                                l1.add(pinput1.getText().toString());
-                                // adapter3.add(pinput1.getText().toString());
-                                ls1.setAdapter(adapter3);
-                                // adapter3.notifyDataSetChanged();
+                                int temp = Integer.parseInt(pinput1.getText().toString());
+
+                                if (score1 - temp >= 0) {
+                                    l1.add(pinput1.getText().toString());
+                                    // adapter3.add(pinput1.getText().toString());
+                                    ls1.setAdapter(adapter3);
+                                    // adapter3.notifyDataSetChanged();
 
 
-                                try {
+                                    try {
 
-                                    score1 = score1 - temp;
+                                        score1 = score1 - temp;
 //                                    pscoore1.setText(String.valueOf(scoore1));
 //                                    mCustomProgressBar1.setProgress(scoore1);
-                                    simulateProgress(score1, scoreProgressBar1);
+                                        simulateProgress(score1, scoreProgressBar1);
+                                        pinput1.setText(null);
+                                        getwiner();
+
+                                    } catch (Exception e) {
+                                        Log.i(this.getClass().getSimpleName(), e.getMessage());
+                                    }
+                                } else {
+                                    AlertDialog.Builder dlgAlert = new AlertDialog.Builder(twoplayersActivity.this);
+                                    dlgAlert.setMessage(" Out of range");
+                                    dlgAlert.setTitle("opps");
+                                    dlgAlert.setPositiveButton("OK", null);
+                                    dlgAlert.setCancelable(true);
+                                    dlgAlert.create().show();
+                                    dlgAlert.setPositiveButton("Ok",
+                                            new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    //
+                                                }
+                                            });
                                     pinput1.setText(null);
-                                    getwiner();
 
-                                } catch (Exception e) {
-                                    Log.i(this.getClass().getSimpleName(), e.getMessage());
                                 }
-                            } else {
-                                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(twoplayersActivity.this);
-                                dlgAlert.setMessage(" Out of range");
-                                dlgAlert.setTitle("opps");
-                                dlgAlert.setPositiveButton("OK", null);
-                                dlgAlert.setCancelable(true);
-                                dlgAlert.create().show();
-                                dlgAlert.setPositiveButton("Ok",
-                                        new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                //
-                                            }
-                                        });
-                                pinput1.setText(null);
-
                             }
 
                             break;
@@ -182,41 +186,44 @@ public class twoplayersActivity extends AppCompatActivity {
         player2_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int temp = Integer.parseInt(pinput2.getText().toString());
-                if (score2 - temp >= 0) {
-                    l2.add(pinput2.getText().toString());
-                    // adapter3.add(pinput1.getText().toString());
-                    ls2.setAdapter(adapter4);
-                    // adapter3.notifyDataSetChanged();
+                if (pinput2.getText().length() != 0) {
+
+                    int temp = Integer.parseInt(pinput2.getText().toString());
+                    if (score2 - temp >= 0) {
+                        l2.add(pinput2.getText().toString());
+                        // adapter3.add(pinput1.getText().toString());
+                        ls2.setAdapter(adapter4);
+                        // adapter3.notifyDataSetChanged();
 
 
-                    try {
+                        try {
 
-                        score2 = score2 - temp;
+                            score2 = score2 - temp;
 //                        pscoore2.setText(String.valueOf(scoore2));
-                        simulateProgress(score2, scoreProgressBar2);
+                            simulateProgress(score2, scoreProgressBar2);
 
+                            pinput2.setText(null);
+                            getwiner();
+
+                        } catch (Exception e) {
+                            Log.i(this.getClass().getSimpleName(), e.getMessage());
+                        }
+                    } else {
+                        AlertDialog.Builder dlgAlert = new AlertDialog.Builder(twoplayersActivity.this);
+                        dlgAlert.setMessage(" Out of range");
+                        dlgAlert.setTitle("opps");
+                        dlgAlert.setPositiveButton("OK", null);
+                        dlgAlert.setCancelable(true);
+                        dlgAlert.create().show();
+                        dlgAlert.setPositiveButton("Ok",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //
+                                    }
+                                });
                         pinput2.setText(null);
-                        getwiner();
 
-                    } catch (Exception e) {
-                        Log.i(this.getClass().getSimpleName(), e.getMessage());
                     }
-                } else {
-                    AlertDialog.Builder dlgAlert = new AlertDialog.Builder(twoplayersActivity.this);
-                    dlgAlert.setMessage(" Out of range");
-                    dlgAlert.setTitle("opps");
-                    dlgAlert.setPositiveButton("OK", null);
-                    dlgAlert.setCancelable(true);
-                    dlgAlert.create().show();
-                    dlgAlert.setPositiveButton("Ok",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //
-                                }
-                            });
-                    pinput2.setText(null);
-
                 }
             }
         });
@@ -226,42 +233,44 @@ public class twoplayersActivity extends AppCompatActivity {
                     switch (keyCode) {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
+                            if (pinput2.getText().length() != 0) {
 
-                            int temp = Integer.parseInt(pinput2.getText().toString());
-                            if (score2 - temp >= 0) {
-                                l2.add(pinput2.getText().toString());
-                                // adapter3.add(pinput1.getText().toString());
-                                ls2.setAdapter(adapter4);
-                                // adapter3.notifyDataSetChanged();
+                                int temp = Integer.parseInt(pinput2.getText().toString());
+                                if (score2 - temp >= 0) {
+                                    l2.add(pinput2.getText().toString());
+                                    // adapter3.add(pinput1.getText().toString());
+                                    ls2.setAdapter(adapter4);
+                                    // adapter3.notifyDataSetChanged();
 
 
-                                try {
+                                    try {
 
-                                    score2 = score2 - temp;
+                                        score2 = score2 - temp;
 //                                    pscoore2.setText(String.valueOf(score2));
-                                    simulateProgress(score2, scoreProgressBar2);
+                                        simulateProgress(score2, scoreProgressBar2);
 
+                                        pinput2.setText(null);
+                                        getwiner();
+
+                                    } catch (Exception e) {
+                                        Log.i(this.getClass().getSimpleName(), e.getMessage());
+                                    }
+                                } else {
+                                    AlertDialog.Builder dlgAlert = new AlertDialog.Builder(twoplayersActivity.this);
+                                    dlgAlert.setMessage(" Out of range");
+                                    dlgAlert.setTitle("opps");
+                                    dlgAlert.setPositiveButton("OK", null);
+                                    dlgAlert.setCancelable(true);
+                                    dlgAlert.create().show();
+                                    dlgAlert.setPositiveButton("Ok",
+                                            new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    //
+                                                }
+                                            });
                                     pinput2.setText(null);
-                                    getwiner();
 
-                                } catch (Exception e) {
-                                    Log.i(this.getClass().getSimpleName(), e.getMessage());
                                 }
-                            } else {
-                                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(twoplayersActivity.this);
-                                dlgAlert.setMessage(" Out of range");
-                                dlgAlert.setTitle("opps");
-                                dlgAlert.setPositiveButton("OK", null);
-                                dlgAlert.setCancelable(true);
-                                dlgAlert.create().show();
-                                dlgAlert.setPositiveButton("Ok",
-                                        new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                //
-                                            }
-                                        });
-                                pinput2.setText(null);
-
                             }
                             break;
                     }
