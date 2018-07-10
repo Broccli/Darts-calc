@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kalo0osha.dartscalc.twoplayersActivity">
+
+
+    <TextView
+        android:id="@+id/player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Yellow Player"
+        android:textColor="#e7d320"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Red Player    "
+        android:textColor="@color/holo_red_dark"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.dinuscxj.progressbar.CircleProgressBar
+        android:id="@+id/score_progress1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player1"
+        app:line_count="30"
+        app:line_width="4dp"
+        app:progress_background_color="@color/holo_darker_gray"
+        app:progress_end_color="@color/holo_lighter_yellow"
+        app:progress_shader="sweep"
+        app:progress_start_color="@color/holo_dark_yellow"
+        app:progress_stroke_cap="round"
+        app:progress_stroke_width="4dp"
+        app:progress_text_color="#e7d320"
+        app:progress_text_size="24sp"
+        app:style="solid_line" />
+
+    <com.dinuscxj.progressbar.CircleProgressBar
+        android:id="@+id/score_progress2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player2"
+        app:line_count="30"
+        app:line_width="4dp"
+        app:progress_background_color="@color/holo_darker_gray"
+        app:progress_end_color="@color/holo_red_dark"
+        app:progress_shader="sweep"
+        app:progress_start_color="@color/holo_red_light"
+        app:progress_stroke_cap="round"
+        app:progress_stroke_width="4dp"
+        app:progress_text_color="@color/holo_red_dark"
+        app:progress_text_size="24sp"
+        app:style="solid_line"
+
+        />
+
+
+    <ListView
+        android:id="@+id/player1_list"
+        android:layout_width="170dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/score_progress1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player1_in" />
+
+    <ListView
+        android:id="@+id/player2_list"
+        android:layout_width="170dp"
+        android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/player1_list"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player2_in" />
+
+    <EditText
+        android:id="@+id/player1_in"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="input"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score_progress1" />
+
+
+    <EditText
+        android:id="@+id/player2_in"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="input"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/score_progress2" />
+
+
+    <Button
+        android:id="@+id/player1_ptn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/player1_in"
+        android:layout_marginBottom="28dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:text="Set"
+        android:textColor="#ffff00"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player1_list" />
+
+    <Button
+        android:id="@+id/player2_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="16dp"
+        android:text="Set"
+        android:textColor="#ff0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player2_list" />
+</android.support.constraint.ConstraintLayout>
+

@@ -1,0 +1,42 @@
+<resources>
+    <string-array name="player1_array">
+        <item>Player 1</item>
+        <item>Badawy</item>
+        <item>Moaz</item>
+        <item>Moanes</item>
+        <item>Samar</item>
+        <item>Aliaa</item>
+        <item>Nour</item>
+        <item>Ahmed Ali</item>
+    </string-array>
+    <string-array name="player2_array">
+        <item>Player 2</item>
+        <item>Badawy</item>
+        <item>Moaz</item>
+        <item>Moanes</item>
+        <item>Samar</item>
+        <item>Aliaa</item>
+        <item>Nour</item>
+        <item>Ahmed Ali</item>
+    </string-array>
+    <string-array name="player3_array">
+        <item>Player 3</item>
+        <item>Badawy</item>
+        <item>Moaz</item>
+        <item>Moanes</item>
+        <item>Samar</item>
+        <item>Aliaa</item>
+        <item>Nour</item>
+        <item>Ahmed Ali</item>
+    </string-array>
+    <string-array name="player4_array">
+        <item>Player 4</item>
+        <item>Badawy</item>
+        <item>Moaz</item>
+        <item>Moanes</item>
+        <item>Samar</item>
+        <item>Aliaa</item>
+        <item>Nour</item>
+        <item>Ahmed Ali</item>
+    </string-array>
+</resources>
