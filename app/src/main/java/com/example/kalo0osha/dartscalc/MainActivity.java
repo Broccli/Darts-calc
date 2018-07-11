@@ -25,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton threePlayers_btn=(ImageButton) findViewById(R.id.threeplayers_btn);
+        threePlayers_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,threeplayersActivity.class);
+                startActivity(intent);
 
+            }
+        });
     }
 }

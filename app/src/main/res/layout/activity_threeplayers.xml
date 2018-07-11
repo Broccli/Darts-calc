@@ -1,47 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.kalo0osha.dartscalc.threeplayersActivity">
-    android:layout_width="368dp"
-    android:layout_height="495dp"
-    tools:layout_editor_absoluteX="8dp"
-    tools:layout_editor_absoluteY="8dp">
 
-    <Spinner
-        android:id="@+id/spinnerone"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp" />
 
-    <Spinner
-        android:id="@+id/spinnertwo"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/spinnerone"
-        android:layout_centerHorizontal="true" />
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
-    <Spinner
-        android:id="@+id/spinnerthree"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/spinnertwo"
-        android:layout_marginEnd="8dp" />
+
+    <!--</ScrollView>-->
 
     <TextView
-        android:id="@+id/scooreone"
+        android:id="@+id/player1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerone"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="42dp"
-        android:layout_toStartOf="@+id/spinnertwo"
-        android:text="TextView" />
-</RelativeLayout>
+        android:text="Yellow Player"
+        android:textColor="#e7d320"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/score_progress1"
+        app:layout_constraintEnd_toStartOf="@id/player2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red Player"
+        android:textColor="@color/holo_red_dark"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/score_progress2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blue Player"
+        android:textColor="@color/holo_blue_dark"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/score_progress3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/player2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.dinuscxj.progressbar.CircleProgressBar
+        android:id="@+id/score_progress1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/player1_in"
+        app:layout_constraintEnd_toStartOf="@id/score_progress2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player1"
+        app:line_count="30"
+        app:line_width="4dp"
+        app:progress_background_color="@color/holo_darker_gray"
+        app:progress_end_color="@color/holo_lighter_yellow"
+        app:progress_shader="sweep"
+        app:progress_start_color="@color/holo_dark_yellow"
+        app:progress_stroke_cap="round"
+        app:progress_stroke_width="4dp"
+        app:progress_text_color="#e7d320"
+        app:progress_text_size="20sp"
+        app:style="solid_line" />
+
+    <com.dinuscxj.progressbar.CircleProgressBar
+        android:id="@+id/score_progress2"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/player2_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player2"
+        app:line_count="30"
+        app:line_width="4dp"
+        app:progress_background_color="@color/holo_darker_gray"
+        app:progress_end_color="@color/holo_red_dark"
+        app:progress_shader="sweep"
+        app:progress_start_color="@color/holo_red_light"
+        app:progress_stroke_cap="round"
+        app:progress_stroke_width="4dp"
+        app:progress_text_color="@color/holo_red_dark"
+        app:progress_text_size="24sp"
+        app:style="solid_line" />
+
+    <com.dinuscxj.progressbar.CircleProgressBar
+        android:id="@+id/score_progress3"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/player3_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/score_progress2"
+        app:layout_constraintTop_toBottomOf="@id/player3"
+        app:line_count="30"
+        app:line_width="4dp"
+        app:progress_background_color="@color/holo_darker_gray"
+        app:progress_end_color="@color/holo_blue_dark"
+        app:progress_shader="sweep"
+        app:progress_start_color="@color/holo_blue_light"
+        app:progress_stroke_cap="round"
+        app:progress_stroke_width="4dp"
+        app:progress_text_color="@color/holo_blue_dark"
+        app:progress_text_size="24sp"
+        app:style="solid_line" />
+
+
+    <EditText
+        android:id="@+id/player1_in"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="input"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/player1_list"
+        app:layout_constraintEnd_toStartOf="@id/player2_in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score_progress1" />
+
+    <EditText
+        android:id="@+id/player2_in"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:hint="input"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/player2_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/score_progress2" />
+
+    <EditText
+        android:id="@+id/player3_in"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:hint="input"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/player3_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/player2_in"
+        app:layout_constraintTop_toBottomOf="@id/score_progress3" />
+
+
+    <ListView
+        android:id="@+id/player1_list"
+        android:layout_width="110dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/score_progress1"
+        app:layout_constraintBottom_toTopOf="@+id/player1_btn"
+        app:layout_constraintEnd_toStartOf="@id/player2_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player1_in" />
+
+    <ListView
+        android:id="@+id/player2_list"
+        android:layout_width="110dp"
+        android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/player1_list"
+        app:layout_constraintBottom_toTopOf="@+id/player2_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player2_in" />
+
+    <ListView
+        android:id="@+id/player3_list"
+        android:layout_width="110dp"
+        android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/player1_list"
+        app:layout_constraintBottom_toTopOf="@+id/player3_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/player2_list"
+        app:layout_constraintTop_toBottomOf="@+id/player3_in" />
+
+
+    <Button
+        android:id="@+id/player1_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/player1_in"
+        android:layout_marginTop="16dp"
+        android:text="Set"
+        android:textColor="#ffff00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/player2_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player1_list" />
+
+    <Button
+        android:id="@+id/player2_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Set"
+        android:textColor="@color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player2_list" />
+
+    <Button
+        android:id="@+id/player3_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Set"
+        android:textColor="@color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/player2_btn"
+        app:layout_constraintTop_toBottomOf="@id/player3_list" />
+</android.support.constraint.ConstraintLayout>
+
